@@ -1,0 +1,30 @@
+body{
+    background: url('../imagens/fundo.png') no-repeat center center fixed; 
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+}
+
+.header{
+    overflow: hidden;
+    background-color: transparent;
+    position: fixed; /* Set the navbar to fixed position */
+    top: 0; /* Position the navbar at the top of the page */
+    width: 100%; /* Full width */
+}
+.col{
+    border-radius: 10px;
+    margin-top: 20%;
+    opacity: 0.85; 
+    color: black;
+}
+
+form#resposta{
+    display: flex;
+    flex-direction: column;
+}
+
+#conferirResposta{
+    display: flex;
+    flex-direction: row;
+}

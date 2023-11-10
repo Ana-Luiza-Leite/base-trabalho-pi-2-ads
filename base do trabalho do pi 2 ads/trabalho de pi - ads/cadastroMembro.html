@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Cabeçalho e estilos -->
+</head>
+
+<body>
+    <section style="background-color:  #80ffaa; width: 100%; height: 100%;">
+        <!-- Cabeçalho/menu -->
+        <div class='container'>
+            <!-- Container -->
+            <div class="row">
+                <div class="col"
+                    style=" background:white;margin-top:15%;margin-left:250px;margin-right:20px;height:840px; width: 650px; border-radius: 25px;">
+                    <center>
+                        <form id="formulario">
+                            <!-- Formulário -->
+                            <!-- Campos do formulário -->
+                            <br>
+                            <h1>Formulario de inscricao - novo membro</h1>
+                            <br>
+                            <br>
+                            <label for="nome">Nome Completo:</label>
+                            <input type="text" id="nome" name="nome" required>
+                            <br><br>
+                            <label for="telefone">Telefone:</label>
+                            <input type="tel" id="telefone" name="telefone" required>
+                            <br><br>
+                            <label for="endereco">Endereço:</label>
+                            <textarea id="endereco" name="endereco" rows="4" required></textarea>
+                            <br><br>
+                            <label for="habilidades">Habilidades:</label>
+                            <select id="habilidades" name="habilidades" multiple required>
+                                <option value="cantar">Cantar</option>
+                                <option value="dancar">Dançar</option>
+                                <option value="flexibilidade">Flexibilidade</option>
+                                <option value="ingles">Fluente em Inglês</option>
+                                <option value="forte">Força</option>
+                            </select>
+                            <br><br>
+                            <label for="idade">Idade:</label>
+                            <input type="text" id="Idade" name="idade">
+                            <br><br>
+                            <label for="observacoes">Por que quer fazer do grupo?</label>
+                            <textarea id="observacoes" name="observacoes" rows="4"></textarea>
+                            <br>
+                            <button type="submit" class="btn btn-primary"
+                                style="height: 25px;width: 150px; border-radius: 5%; background-color: white; margin-top: 20%;">
+                                <h>Enviar Cadastro</h>
+                            </button>
+                        </form>
+                    </center>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        document.getElementById("formulario").addEventListener("submit", function(event) {
+            event.preventDefault(); // Impede o envio padrão do formulário
+
+            // Lógica para processar o formulário
+
+            // Exemplo de exibição de uma mensagem no console
+            console.log("Formulário enviado!");
+
+            // Redirecionar para outra página
+            window.location.href = "../trabalho de pi - ads/home.html";
+        });
+    </script>
+</body>
+
+</html>
