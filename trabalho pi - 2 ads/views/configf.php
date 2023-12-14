@@ -10,7 +10,7 @@ $cpf = pg_escape_string($conn, $_POST['cpf']);
 
 //var_dump($senha);
 // Verificar o comprimento do e-mail
-echo "Comprimento do e-mail: " . strlen($email);
+//echo "Comprimento do e-mail: " . strlen($email);
 
 // Verificar se o e-mail já existe
 $verificaQuery = "SELECT * FROM livraria.tb_pessoa WHERE ds_email = $1";
@@ -41,8 +41,8 @@ if (!$result) {
     exit;
 } else {
     echo "Dados inseridos com sucesso!";
+    header("Location:../views/login.html");
+    exit;
 }
 
-// Fechar a conexão
-pg_close($conn);
 ?>

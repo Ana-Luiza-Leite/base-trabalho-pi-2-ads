@@ -42,8 +42,8 @@ if (!$result) {
 } else {
     echo "Dados inseridos com sucesso!";
     header("Location:../views/login.html");
+    exit;
 }
 
-// Fechar a conexão
-pg_close($conn);
+
 ?>
