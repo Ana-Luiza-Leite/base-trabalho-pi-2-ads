@@ -42,20 +42,17 @@
                                 echo "<br>";
                              ?>
                             <h2><label for="cadastromateria" class="form-label">Cadastro de Livros</label></h2>
-                        </div>
-                        <div class="mb-3">
-                            <label for="nm_materia" class="form-label">Nome da Matéria</label>
-                            <select name="nm_materia" id="nm_materia">
-                                <option value="Física">Física</option>
-                                <option value="Matemática">Matemática</option>
-                                <option value="Português">Português</option>
-                                <option value="Química">Química</option>
+                            <label class="checkbox1">
+                                <input type="checkbox" name="categorias[]" value="1"> AVIAÇÃO COMERCIAL
+                            </label>
 
-                            </select>
+                            <label class="checkbox1">
+                                <input type="checkbox" name="categorias[]" value="2"> AVIAÇÃO MILITAR
+                            </label>
 
-                            <div class="valid-feedback">Válido.</div>
-                            <div class="invalid-feedback">Por favor, preencha este campo com o nome da matéria.</div>
-                        </div>
+                            <label class="checkbox1">
+                                <input type="checkbox" name="categorias[]" value="3"> TECNOLOGIA AERO
+                            </label>
                         <div class="mb-3">
                             <label for="conteudo" class="form-label">Conteúdo</label>
                             <input type="text" name="conteudo" class="form-control" id="conteudo"

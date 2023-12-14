@@ -26,23 +26,23 @@ $dados = pg_fetch_assoc($retorno);
 
 $rows = pg_num_rows($retorno);
 
-echo "LINHAS ENCONTRADAS" . $rows
+//echo "LINHAS ENCONTRADAS" . $rows
 
-// if (pg_num_rows($retorno) == 1) {
-//     $_SESSION['usuario'] = $dados['ds_email'];
-//     $_SESSION['f_isFuncionario'] = $dados['f_isFuncionario'];
+ if (pg_num_rows($retorno) == 1) {
+     $_SESSION['usuario'] = $dados['ds_email'];
+     $_SESSION['f_isFuncionario'] = $dados['f_isFuncionario'];
 
-//     $tipo = $dados["f_isFuncionario"];
+     $tipo = $dados["f_isFuncionario"];
 
-//     if ($tipo == 0) {
-//         header('Location: ../views/principalc.php');
-//         exit;
-//     } else {
-//         header('Location: ../views/principalf.php');
-//         exit;
-//     }
-// } else {
-//     header('Location: index.html');
-//     exit;
-// }
+     if ($tipo == 0) {
+         header('Location: ../views/principalc.php');
+         exit;
+     } else {
+         header('Location: ../views/principalf.php');
+         exit;
+     }
+ } else {
+     header('Location: index.html');
+     exit;
+ }
 ?>

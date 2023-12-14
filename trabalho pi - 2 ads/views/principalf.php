@@ -19,8 +19,8 @@
                 
                 <ul>
                 <a href="#"><img src="../imagens/logo.png" class="logo" ></a>
-                    <li><a href="../views/inicial.html">Página Inicial</a></li>
-                    <li><a href="../views/index.html">Saiba Mais</a></li>
+                    <li><a href="../views/principalf.php">Página Inicial</a></li>
+                    <li><a href="../views/adicionarLivro.php">Cadastrar Livro</a></li>
                     <li><a href="../views/logout.php">Logout</a></li>
                 </ul>
             </header>

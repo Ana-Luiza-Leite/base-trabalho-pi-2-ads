@@ -27,7 +27,7 @@ if (pg_num_rows($verificaResult) > 0) {
 }
 
 // Utilize password_hash para armazenar senhas de forma segura
-$senhaHash = password_hash($senha, PASSWORD_DEFAULT);
+$senhaHash = md5($senha);
 //var_dump($senhaHash);
 $id_pessoa = rand(1, 1000);
 // Utilize Prepared Statements para prevenir injeção de SQL
