@@ -31,18 +31,19 @@ $rows = pg_num_rows($retorno);
  if (pg_num_rows($retorno) == 1) {
      $_SESSION['usuario'] = $dados['ds_email'];
      $_SESSION['f_isFuncionario'] = $dados['f_isFuncionario'];
-
+     var_dump($dados['f_isFuncionario']);
+     //var_dump($_SESSION);
      $tipo = $dados["f_isFuncionario"];
-
-     if ($tipo == 0) {
-         header('Location: ../views/principalc.php');
-         exit;
+    //var_dump($tipo);
+    if ($tipo == 0) {
+       header('Location: ../views/principalc.php');
+        exit;
      } else {
-         header('Location: ../views/principalf.php');
-         exit;
+        header('Location: ../views/principalf.php');
+       exit;
      }
  } else {
-     header('Location: index.html');
+      header('Location: index.html');
      exit;
  }
 ?>
