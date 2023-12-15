@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Livros- Page</title>
-    <link rel="stylesheet" href="estilo.css">
+    <link rel="stylesheet" href="novo.css">
     <link rel="icon" href="../imagens/logo.png">
 
 </head>
@@ -20,7 +20,7 @@
 
             <ul>
                 <a href="#"><img src="../imagens/logo.png" class="logo"></a>
-                <li><a href="../views/principalf.php">Página Principal</a></li>
+                <li><a href="../views/principal.php">Página Principal</a></li>
                 <li><a href="../views/adicionarLivro.php">Cadastrar Livros</a></li>
                 <li><a href="../views/logout.php">Logout</a></li>
             </ul>
@@ -55,24 +55,15 @@
                                         <input type="text" name="ds_descricao" class="form-control" id="ds_descricao"
                                             placeholder="Digite a descrição do conteúdo" required>
                                     </div>
-                                    <label>Gênero:</label><br>
-                                        <?php
-                                        // Conexão com o banco de dados
-                                        include('conecta.php');
-
-                                        // Consulta para obter as categorias
-                                        $result = pg_query($conn, "SELECT * FROM livraria.tb_genero");
-
-                                        // Loop para exibir checkboxes para cada categoria
-                                        while ($row = pg_fetch_assoc($result)) {
-                                            echo "<label class='checkbox1'>";
-                                            echo "<input type='checkbox' name='generos[]' value='{$row['id_genero']}'> {$row['nome_categoria']}";
-                                            echo "</label><br>";
-                                        }
-
-                                        // Fechar a conexão
-                                        pg_close($conn);
-                                        ?>
+                                    <div class="mb-3">
+                                    <label for="nm_genero" class="form-label">Genero</label>
+                                    <select name="nm_genero" id="nm_genero">
+                                    <option value="1">Romance</option>
+                                    <option value="2">Diversos</option>
+                                    <option value="3">Bibliografia</option>
+                                    <option value="4">Fantasia</option>
+                                    </select>
+                                    </div>
                                     <div class="text-center">
                                         <button type="submit" name="acao" value="cadastrar"
                                             class="btn btn-primary">Cadastrar</button>
