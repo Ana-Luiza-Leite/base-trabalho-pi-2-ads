@@ -31,8 +31,8 @@ $senhaHash = md5($senha);
 //var_dump($senhaHash);
 $id_pessoa = rand(1, 1000);
 // Utilize Prepared Statements para prevenir injeção de SQL
-$query = "INSERT INTO livraria.tb_pessoa (id_pessoa, nm_pessoa, ds_email, senha, f_isFuncionario, nu_cpf) VALUES ($1, $2, $3, $4,'0', $5)";
-$params = array($id_pessoa, $nome, $email, $senhaHash, $cpf);
+$query = "INSERT INTO livraria.tb_pessoa (id_pessoa, nm_pessoa, ds_email, senha, f_isFuncionario, nu_cpf) VALUES ($1, $2, $3, $4,'false', $5)";
+$params = array($id_pessoa, $nome, $email, $senhaHash,$f_isFuncionario, $cpf);
 
 $result = pg_query_params($conn, $query, $params);
 
