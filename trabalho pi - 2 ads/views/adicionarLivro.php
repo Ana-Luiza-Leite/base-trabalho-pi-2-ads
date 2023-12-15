@@ -1,6 +1,4 @@
-<?php
-    require_once('verificarUsuario.php');
-?>
+<!--require_once('verificarUsuario.php');  colocar o abre e fecha do php-->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -28,48 +26,61 @@
             </ul>
         </header>
     </center>
-    <div class='container'>
-        <div class="row">
-            <div class="col"
-                style="background: white;margin-top:5%;margin-left:20px;margin-right:20px;height:420px; width: 200px;">
-                <center>
+    <div class="fundo">
+        <div class="container branco">
+            <div class='container'>
+                <div class="row">
+                    <div class="col"
+                        style="background: white;margin-top:5%;margin-left:20px;margin-right:20px;height:420px; width: 200px;">
+                        <center>
 
-                    <form method="post" action=" " enctype="multipart/form-data">
-                        <input value="<?php echo $id;?>" name="id" type="hidden">
-                        <div class="mb-3">
-                            <?php
+                            <form method="post" action=" " enctype="multipart/form-data">
+                                <input value="<?php echo $id_pessoa;?>" name="id_pessoa" type="hidden">
+                                <div class="mb-3">
+                                    <?php
                                 echo "<br>";
                                 echo "<br>";
                              ?>
-                            <h2><label for="cadastromateria" class="form-label">Cadastro de Livros</label></h2>
-                            <label class="checkbox1">
-                                <input type="checkbox" name="categorias[]" value="1"> AVIAÇÃO COMERCIAL
-                            </label>
+                                    <h2><label for="cadastromateria" class="form-label">Cadastro de Livros</label></h2>
+                                    <div class="mb-3">
+                                        <label for="nm_livro" class="form-label">Titulo</label>
+                                        <input type="text" name="nm_livro" class="form-control" id="nm_livro"
+                                            placeholder="Digite a descrição do conteúdo" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <input type="file" name="ds-arquivo" placeholder="Selecione um arquivo...">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="ds_descricao" class="form-label">Descrição</label>
+                                        <input type="text" name="ds_descricao" class="form-control" id="ds_descricao"
+                                            placeholder="Digite a descrição do conteúdo" required>
+                                    </div>
+                                    <label>Gênero:</label><br>
+                                        <?php
+                                        // Conexão com o banco de dados
+                                        include('conecta.php');
 
-                            <label class="checkbox1">
-                                <input type="checkbox" name="categorias[]" value="2"> AVIAÇÃO MILITAR
-                            </label>
+                                        // Consulta para obter as categorias
+                                        $result = pg_query($conn, "SELECT * FROM livraria.tb_genero");
 
-                            <label class="checkbox1">
-                                <input type="checkbox" name="categorias[]" value="3"> TECNOLOGIA AERO
-                            </label>
-                        <div class="mb-3">
-                            <label for="conteudo" class="form-label">Conteúdo</label>
-                            <input type="text" name="conteudo" class="form-control" id="conteudo"
-                                placeholder="Digite a descrição do conteúdo" required>
-                            <div class="valid-feedback">Válido.</div>
-                            <div class="invalid-feedback">Por favor, preencha este campo com a descrição do conteúdo.
-                            </div>
-                        </div>
-                        <div class="mb-3">
-                            <input type="file" name="arquivo" placeholder="Selecione um arquivo...">
-                        </div>
-                        <div class="text-center">
-                            <button type="submit" name="acao" value="cadastrar"
-                                class="btn btn-primary">Cadastrar</button>
-                        </div>
-                    </form>
-                </center>
+                                        // Loop para exibir checkboxes para cada categoria
+                                        while ($row = pg_fetch_assoc($result)) {
+                                            echo "<label class='checkbox1'>";
+                                            echo "<input type='checkbox' name='generos[]' value='{$row['id_genero']}'> {$row['nome_categoria']}";
+                                            echo "</label><br>";
+                                        }
+
+                                        // Fechar a conexão
+                                        pg_close($conn);
+                                        ?>
+                                    <div class="text-center">
+                                        <button type="submit" name="acao" value="cadastrar"
+                                            class="btn btn-primary">Cadastrar</button>
+                                    </div>
+                            </form>
+                        </center>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
