@@ -20,8 +20,8 @@
 
             <ul>
                 <a href="#"><img src="../imagens/logo.png" class="logo"></a>
-                <li><a href="../views/inicial.html">Página Inicial</a></li>
-                <li><a href="../views/index.html">Saiba Mais</a></li>
+                <li><a href="../views/principalf.php">Página Principal</a></li>
+                <li><a href="../views/adicionarLivro.php">Cadastrar Livros</a></li>
                 <li><a href="../views/logout.php">Logout</a></li>
             </ul>
         </header>
@@ -41,7 +41,7 @@
                                 echo "<br>";
                                 echo "<br>";
                              ?>
-                                    <h2><label for="cadastromateria" class="form-label">Cadastro de Livros</label></h2>
+                                    <h2><label for="cadastroLivros" class="form-label">Cadastro de Livros</label></h2>
                                     <div class="mb-3">
                                         <label for="nm_livro" class="form-label">Titulo</label>
                                         <input type="text" name="nm_livro" class="form-control" id="nm_livro"
