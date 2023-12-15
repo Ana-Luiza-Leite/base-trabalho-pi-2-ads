@@ -50,6 +50,19 @@ header ul li a
     margin-left: 40px;
     text-decoration: none;
 }/*escrita do header*/
+.fundo{
+    background-color: #ffffff;
+    max-width: 50%;
+    margin-top: 12%;
+    width: 90%;
+    padding:30px ;
+    position: relative fixed;
+    border-radius: 1rem;
+    box-shadow: 5px 5px 5px #25252554;
+    text-align: left;
+    align-content: center;
+}
+
 .content
 {
     position: relative;
